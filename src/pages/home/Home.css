@@ -1,6 +1,26 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap');
+
 .wardrobe-layout {
   min-height: 100vh;
   background-color: #FFFFFF;
+}
+
+/* Base styles with Inter for body/labels */
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  background: #FFFFFF;
+  color: #1A1A1A;
+}
+
+/* Headers - Serif thin (Cormorant) */
+h1, h2, h3, h4, h5, h6,
+.filter-title,
+.main-header h1,
+.product-name {
+  font-family: 'Cormorant', serif;
+  font-weight: 300;
 }
 
 /* Header */
@@ -213,11 +233,13 @@
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 .product-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
 .product-image {
@@ -258,11 +280,12 @@
   background: #1A1A1A;
   color: white;
   border: none;
-  padding: 16px 24px;
-  border-radius: 50px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -274,14 +297,13 @@
 }
 
 .plus-icon {
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 300;
+  line-height: 1;
 }
 
 .btn-text {
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 1px;
+  display: none;
 }
 
 /* Responsive */
