@@ -1,0 +1,299 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  width: 90%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #8C8C8C;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: #F5F0E8;
+  color: #1A1A1A;
+}
+
+/* Modal Title */
+.modal-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1A1A1A;
+  letter-spacing: 1.5px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Upload Area */
+.upload-area {
+  border: 2px dashed #E8E4DF;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.upload-area:hover {
+  border-color: #1A1A1A;
+  background: #FDFCFB;
+}
+
+.upload-area.has-image {
+  padding: 16px;
+}
+
+.upload-icon {
+  color: #8C8C8C;
+  margin-bottom: 12px;
+}
+
+.upload-text {
+  font-size: 14px;
+  color: #1A1A1A;
+  margin-bottom: 8px;
+}
+
+.upload-hint {
+  font-size: 12px;
+  color: #8C8C8C;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Image Preview */
+.image-preview {
+  position: relative;
+  display: inline-block;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #1A1A1A;
+  color: white;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.remove-image-btn:hover {
+  background: #333;
+}
+
+/* Items Section */
+.items-section {
+  margin-bottom: 24px;
+}
+
+.items-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #1A1A1A;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.item-card {
+  background: #F5F0E8;
+  border-radius: 12px;
+  padding: 16px 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.item-emoji {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.item-name {
+  font-size: 11px;
+  color: #1A1A1A;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Modal Actions */
+.modal-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-cancel {
+  flex: 1;
+  padding: 14px 24px;
+  background: white;
+  border: 1px solid #E8E4DF;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8C8C8C;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 1px;
+}
+
+.btn-cancel:hover {
+  border-color: #1A1A1A;
+  color: #1A1A1A;
+}
+
+.btn-save {
+  flex: 1;
+  padding: 14px 24px;
+  background: #1A1A1A;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 1px;
+}
+
+.btn-save:hover:not(:disabled) {
+  background: #333;
+}
+
+.btn-save:disabled {
+  background: #CCC;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 24px 16px;
+    width: 95%;
+  }
+
+  .modal-title {
+    font-size: 16px;
+  }
+
+  .upload-area {
+    padding: 24px 16px;
+  }
+
+  .items-grid {
+    gap: 8px;
+  }
+
+  .item-card {
+    padding: 12px 6px;
+  }
+
+  .item-emoji {
+    font-size: 24px;
+  }
+
+  .item-name {
+    font-size: 10px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .btn-cancel,
+  .btn-save {
+    width: 100%;
+  }
+}
